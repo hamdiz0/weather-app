@@ -6,9 +6,3 @@ export default defineConfig({
   plugins: [react()],
 })
 
-// vite.config.js
-export default {
-  build: {
-    outDir: 'dist',
-  },
-}
