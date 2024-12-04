@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Weather container - center the entire weather box */
+.weather-container {
+    place-self: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 3s ease-in-out; /* Smooth transition for background change */
+    width: 80%; /* Adjust container width */
+    max-width: 900px; /* Ensure container doesn't stretch too wide */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Center the search bar within its container */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the bar stretches fully across */
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid white;
+    outline: none;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out;
+    width: 60%; /* Input takes up 60% of the width */
+    max-width: 300px; /* Maximum width for input */
+}
+
+.search-bar input:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    background: #ff9800;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #ffb74d;
+    transform: scale(1.1);
+}
+
+/* Weather Icon Styling */
+.weather-icon {
+    width: 120px;
+    margin: 20px 0; /* Reduced margin for better spacing */
+}
+
+/* Temperature Styling */
+.temperature {
+    color: #fff;
+    font-size: 70px;
+    line-height: 1;
+    margin: 10px 0; /* Add spacing below */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle text shadow */
+}
+
+/* Location Styling */
+.location {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px; /* Add spacing below location */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Data Section */
+.weather-data {
+    width: 100%;
+    margin-top: 30px;
+    color: black; /* Set text color to black */
+    display: flex;
+    justify-content: center; /* Center the weather data */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Weather Data Columns */
+.weather-data .col {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    width: 45%; /* Make each column take up 45% of the width */
+    background: rgba(0, 0, 0, 0.1); /* Darker background for contrast */
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Center the content within each column */
+}
+
+.weather-data .col span {
+    display: block;
+    font-size: 10px;
+    color: #333; /* Lighter color for span text */
+}
+
+.weather-data .col img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Cold Weather Animation */
+.cold {
+    animation: coldEffect 5s infinite alternate;
+}
+
+/* Hot Weather Animation */
+.hot {
+    animation: hotEffect 5s infinite alternate;
+}
+
+@keyframes coldEffect {
+    0% {
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+    }
+    100% {
+        background: linear-gradient(45deg, #4b79a1, #283e51);
+    }
+}
+
+@keyframes hotEffect {
+    0% {
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    }
+    100% {
+        background: linear-gradient(45deg, #f857a6, #ff5858);
+    }
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #ff4d4d;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Weather Data - Wind and Humidity Side by Side */
+.weather-data .wind-humidity {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%; /* Stretch it across the parent container */
+}
+
+/* Adjusting the column for wind and humidity */
+.weather-data .col span {
+    display: block;
+    font-size: 16px;
+    color: #333; /* Lighter color for span text */
+}
+
+.weather-data .col img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Making sure the two columns appear side by side */
+.weather-data .col.humidity, 
+.weather-data .col.wind-speed {
+    width: 45%; /* Adjust width to fit two items side by side */
+}

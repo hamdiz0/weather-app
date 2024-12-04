@@ -1,0 +1,83 @@
+ body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: white;
+            text-align: center;
+            animation: gradientBackground 10s infinite alternate;
+        }
+
+.bg-cold {
+  background: url('./assets/snow.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.bg-moderate {
+  background: url('./assets/clear.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.bg-hot {
+  background: url('./assets/sun.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.bg-rainy {
+  background: url('./assets/rain.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  width: 100%; /* Adjust container width */
+  max-width: 1100px; /* Ensure container doesn't stretch too wide */
+  border-radius: 10px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.search-bar img {
+  cursor: pointer;
+}
+
+.weather-icon {
+  width: 50px;
+  margin: 20px 0;
+}
+
+.temperature {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.location {
+  font-size: 24px;
+}
+
+
+
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
