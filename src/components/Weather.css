@@ -5,7 +5,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+  
+    background-color: rgb(30,30,30);
     color: white;
     font-family: 'Poppins', Arial, sans-serif;
     text-align: center;
@@ -16,14 +17,14 @@ body {
     place-self: center;
     padding: 40px;
     border-radius: 10px;
-    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition: background 3s ease-in-out; /* Smooth transition for background change */
-    width: 80%; /* Adjust container width */
+    width:100%;
     max-width: 900px; /* Ensure container doesn't stretch too wide */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
@@ -40,13 +41,15 @@ body {
 
 .search-bar input {
     padding: 10px 15px;
-    border-radius: 50px;
+    border-radius: 8px;
+    color: rgb(30,30,30);
     border: 1px solid white;
     outline: none;
     font-size: 16px;
     transition: transform 0.3s ease-in-out;
     width: 60%; /* Input takes up 60% of the width */
     max-width: 300px; /* Maximum width for input */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar input:focus {
@@ -54,21 +57,6 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.search-bar button {
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: none;
-    background: #ff9800;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.search-bar button:hover {
-    background-color: #ffb74d;
-    transform: scale(1.1);
-}
 
 /* Weather Icon Styling */
 .weather-icon {
@@ -111,12 +99,13 @@ body {
     align-items: center;
     gap: 12px;
     font-size: 20px;
-    width: 45%; /* Make each column take up 45% of the width */
     background: rgba(0, 0, 0, 0.1); /* Darker background for contrast */
     padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     justify-content: center; /* Center the content within each column */
+    justify-content: space-between;
+    color: #fff;
 }
 
 .weather-data .col span {
@@ -140,24 +129,6 @@ body {
     animation: hotEffect 5s infinite alternate;
 }
 
-@keyframes coldEffect {
-    0% {
-        background: linear-gradient(45deg, #1e3c72, #2a5298);
-    }
-    100% {
-        background: linear-gradient(45deg, #4b79a1, #283e51);
-    }
-}
-
-@keyframes hotEffect {
-    0% {
-        background: linear-gradient(45deg, #ff7e5f, #feb47b);
-    }
-    100% {
-        background: linear-gradient(45deg, #f857a6, #ff5858);
-    }
-}
-
 /* Error Message Styling */
 .error-message {
     color: #ff4d4d;
@@ -178,16 +149,10 @@ body {
 .weather-data .col span {
     display: block;
     font-size: 16px;
-    color: #333; /* Lighter color for span text */
+    color: #fff; /* Lighter color for span text */
 }
 
 .weather-data .col img {
     width: 30px;
     margin-right: 10px;
-}
-
-/* Making sure the two columns appear side by side */
-.weather-data .col.humidity, 
-.weather-data .col.wind-speed {
-    width: 45%; /* Adjust width to fit two items side by side */
 }

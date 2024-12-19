@@ -5,6 +5,7 @@ import humidity_icon from '../assets/humidity.png';
 import wind_icon from '../assets/wind.png';
 import snow_icon from '../assets/snow.png';
 import rain_icon from '../assets/rain.png';
+import sky_icon from '../assets/sky.png';
 
 const Weather = () => {
   const [city, setCity] = useState('');
@@ -49,7 +50,6 @@ const Weather = () => {
         setWeatherIcon(clear_icon);
       }
     } catch (error) {
-      console.error('Error fetching weather data:', error);
       setError('Failed to fetch weather data. Please try again later.');
     }
   };
@@ -66,15 +66,14 @@ const Weather = () => {
   return (
     <div className="weather-container">
       <header>
-        <h1>Météo Interactif</h1>
+        <h1 class="title">Interactive Weather App</h1>
         <div className="search-bar">
           <input
             type="text"
-            placeholder="Entrez une ville..."
+            placeholder="Enter city name ..."
             value={city}
             onChange={(e) => setCity(e.target.value)} // Update city state
           />
-          <button onClick={() => search(city)}>Rechercher</button>
         </div>
       </header>
 
@@ -83,28 +82,26 @@ const Weather = () => {
       {weatherData && (
         <>
           <img src={weatherIcon} alt="Current Weather" className="weather-icon" />
-          <div className="location">{weatherData.name}, {weatherData.sys.country}</div>
-          <div className="temperature">{Math.round(weatherData.main.temp)}°C</div>
-
+          <div className="location">{weatherData.name} {weatherData.sys.country}, {Math.round(weatherData.main.temp)}°C</div>
           <div className="weather-data">
             <div className="col wind-speed">
-              <img src={wind_icon} alt="Wind" />
+              <img src={wind_icon} alt="Wind" class="img"/>
               <div>
                 {weatherData.wind.speed} km/h
-                <span>Vitesse du vent</span>
+                <span>Wind speed</span>
               </div>
             </div>
 
             <div className="col humidity">
-              <img src={humidity_icon} alt="Humidity" />
+              <img src={humidity_icon} alt="Humidity" class="img"/>
               <div>
                 {weatherData.main.humidity}%
-                <span>Humidité</span>
+                <span>Humidity</span>
               </div>
             </div>
 
             <div className="col">
-              <img src={clear_icon} alt="Description" />
+              <img src={sky_icon} alt="Description" class="img"/>
               <div>{weatherData.weather[0].description}</div>
             </div>
           </div>
