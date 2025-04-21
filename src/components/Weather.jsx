@@ -50,7 +50,7 @@ const Weather = () => {
         setWeatherIcon(clear_icon);
       }
     } catch (error) {
-      setError('Failed to fetch weather data. Please try again later.');
+      setError('Failed to fetch weather data. Please try again.');
     }
   };
 
